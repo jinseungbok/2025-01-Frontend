@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .parant span:first-child {
+      .parent :first-child {
         background-color: lightgreen;
       }
-      .parant p:first-of-type first-child {
+      .parent p:first-of-type {
         background-color: steelblue;
       }
-      .parent2 p:first-of-type first-child {
+
+      .parent2 :first-of-type {
         background-color: steelblue;
       }
     </style>
@@ -31,6 +32,8 @@
     <div class="parent2">
       <span class="box box1">span</span>
       <p class="box box1">p</p>
+      <div>1</div>
+      <div>2</div>
       <span class="box box1">span</span>
       <p class="box box1">p</p>
       <span class="box box1">span</span>
