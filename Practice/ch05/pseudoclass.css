@@ -1,0 +1,45 @@
+.outer li {
+  color: olivedrab;
+}
+/* 하위 선택자(decendant selector) */
+
+.outer > li {
+  color: dodgerblue;
+}
+/* 자식 선택자(>) (child selector) */
+
+.outer > li li {
+  text-decoration: underline;
+}
+
+.starter ~ li {
+  font-style: italic;
+}
+/* 맨 처음과 맨 끝의 색상만 적용 */
+ol :first-child,
+ol :last-child {
+  color: yellowgreen;
+}
+/* not 가상 선택자는 활용할 때가 종종 있으므로 알아둬야 함 */
+.outer > :not(last-child) {
+  background-color: antiquewhite;
+}
+/* not과 class 조합도 가능하다 */
+/* :not(.class) */
+ul:not(.outer) li {
+  font-weight: bold;
+}
+/* class로 할 수 있으므로 잘 사용하지 않음 */
+/* 홀수 또는 짝수인 변수를 선택하고 싶을 때 활용 */
+/* 숫자+n시 n의 배수만 속성 적용 */
+ol :nth-child(3n) {
+  font-weight: bold;
+  color: blue;
+}
+/* even : 짝수 odd : 홀수 */
+ol :nth-child(even) {
+  background-color: beige;
+}
+ol :nth-child(odd) {
+  background-color: cadetblue;
+}
