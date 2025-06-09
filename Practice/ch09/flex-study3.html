@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: gray;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 20px;
+        /* 아이템과 아이템 사이의 간격을 주고 싶을 때 사용 */
+      }
+      .container > div {
+        background-color: maroon;
+        color: #fff;
+        padding: 10px;
+        min-width: 48px;
+        min-height: 48px;
+        border: 1px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-study3.html</h1>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <span>안녕하세요.</span>
+  </body>
+</html>
