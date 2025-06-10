@@ -12,6 +12,8 @@ function sum(n1, n2) {
   // return; 키워드는 자동으로 들어감
 }
 
+console.log('void함수', sum(10, 20)); // void함수 = undefined
+
 sum(1, 2);
 
 const copySum = sum;
