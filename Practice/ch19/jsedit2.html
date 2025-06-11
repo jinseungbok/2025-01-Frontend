@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>jsedit2.html</h1>
+    <a href="https://www.naver.com" target="_blank">웹 사이트 바로가기</a>
+    <br />
+    <input type="text" name="messege" value="Hello World" />
+    <br />
+    <input type="checkbox" id="checkbox" name="toggle" checked />
+    <label for="checkbox">체크 박스</label>
+  </body>
+  <script>
+    const $hyperLink = document.querySelector("a");
+    console.log("$hyperLink.href", $hyperLink.href);
+    console.log(
+      '$hyperLink.getAttribute("href")',
+      $hyperLink.getAttribute("href")
+    );
+    console.log("$hyperLink.kkk", $hyperLink.kkk);
+    console.log(
+      '$hyperLink.getAttribute("kkk")',
+      $hyperLink.getAttribute("kkk")
+    );
+    // get, set은 붙어있는 경우가 대개 있다. 없는 경우도 있음
+    // get은 속성값(키값) 1개만 받음
+    // set은
+    $hyperLink.setAttribute("href", "https://www.yalco.kr");
+    // 속성값이 바뀌었으므로 https://www.yalco.kr 로 이동
+    const $messege = document.querySelector(
+      'input[name="messege"][type="text"]'
+    );
+    console.log("$messege: ", $messege);
+    const msg = $messege.value;
+    console.log("$messege.value: ", $messege.value);
+    console.log(
+      '$messege.getAttibute("value"): ',
+      $messege.getAttribute("value")
+    );
+    $messege.value = "Hello World!!!";
+    // $messege.setAttribute("value", "zzz");
+    console.log("$messege.value: ", $messege.value);
+
+    $checkbox = document.querySelector("#checkbox");
+    console.log("$checkbox.checked: ", $checkbox.checked);
+    $checkbox.checked = false;
+    
+  </script>
+</html>

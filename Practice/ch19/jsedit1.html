@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./jsselect.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>jsedit1.html</h1>
+    <section class="plant">
+      <h2 id="vegetable_title"><i>채소</i></h2>
+      <ul>
+        <!-- <li class="organic">당근</li> -->
+        <li>당근</li>
+        <li>오이</li>
+        <li>상추</li>
+        <li>가지</li>
+        <li class="hidden kkk vvvv">양파</li>
+        <!-- visibility: hidden -->
+        <!-- display:none; -->
+      </ul>
+    </section>
+    <section id="sweets" class="plant">
+      <h2>과일</h2>
+      <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li>포도</li>
+      </ul>
+    </section>
+    <section>
+      <h2>고기</h2>
+      <ul>
+        <li class="soldout">소고기</li>
+        <li>돼지고기</li>
+        <li class="soldout">닭고기</li>
+      </ul>
+    </section>
+    <script>
+      const $vegetableTitle = document.querySelector("#vegetable_title");
+      // $vegetableTitle.textContent = "Vegetable"; / 잘 사용되지 않음
+      // = 은 변수, 속성만 줄 수 있음
+      console.log("$vegetableTitle.textContent: ", $vegetableTitle.textContent); // 채소
+      // $vegetableTitle.innerText = 'Vegetable'; / 텍스트만 넣고 싶다
+      console.log("$vegetableTitle.innerText: ", $vegetableTitle.innerText); // 채소
+      // $vegetableTitle.innerHTML = 'Vegetable'; / html 태그도 주고 싶다
+      console.log("$vegetableTitle.innerHTML: ", $vegetableTitle.innerHTML); // <i>채소</i>
+      $vegetableTitle.innerHTML += "Vegetable"; // Vegetable 추가
+
+      const $onion = document.querySelector("section ul").lastElementChild;
+      // . (chaining)
+      // 본인 자식 중 마지막 자식의 주소값이 넘어옴
+      console.log("$onion.classList", onion.classList);
+      // () = method, 없으면 property
+      console.log(Array.isArray($onion.classList));
+      console.log(Array.isArray([]));
+      //  $onion.classList.remove("kkk");
+      $onion.classList.remove("hidden"); // 기본 아이템 유지하면서 제거
+      $onion.classList.add("organic"); // 기본 아이템 유지하면서 추가
+      //  $onion.className == "kkk vvv organic"; // 전부 제거
+      //  $onion.style["font-size"] = "2em";
+      $onion.style.fontSize = "2em";
+      // 점으로 백그라운드 컬러를 blue로 변경
+      // $onion.style.['background-Color'] = "blue";
+      $onion.style.backgroundColor = "blue";
+      // $onion.style["list-style-tyle"] = "none";
+      // $onion.style.listStyleType = "none";
+      $onion.style["listStyleType"] = "none";
+
+      const obj = {
+        "list-style-type": "",
+        listStyleType: "",
+      };
+    </script>
+  </body>
+</html>
