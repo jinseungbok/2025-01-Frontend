@@ -53,3 +53,18 @@ aboutCards.forEach((item, idx) => {
     `;
   $aboutDiv.appendChild($div);
 });
+// id가 있으면 id를 활용하는 것이 안정적
+const $currLiList = document.querySelectorAll(
+  "#curriculum .curriculum__list > li"
+);
+const $currProgBar = document.querySelector(
+  "#curriculum .curriculum__progress .bar"
+);
+
+$currLiList.forEach((item, idx) => {
+  item.addEventListener(
+    "mouseenter",
+    () => ($currProgBar.style.width = `${200 * idx}px`)
+  );
+  item.addEventListener("mouseleave", () => ($currProgBar.style.width = 0));
+});
