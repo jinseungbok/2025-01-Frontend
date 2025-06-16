@@ -42,11 +42,11 @@
             const $inputColor = makeElement('input', { type: 'color' });
             target.appendChild($inputColor);
 
-            const $inputButtonClear = makeElement
-                ('input', { 'type': 'button', 'value': '전체 삭제' });
+            const $inputButtonClear = makeElement('input'
+                , { 'type': 'button', 'value': '전체 삭제' });
             $inputButtonClear.addEventListener('click', () => {
-                for(const $tr of $table.children) {
-                    for(const $td of $tr.children) {
+                for (const $tr of $table.children) {
+                    for (const $td of $tr.children) {
                         $td.style.backgroundColor = null;
                     }
                 }
@@ -61,7 +61,7 @@
                 $table.appendChild($tr);
                 for (let x = 0; x < nx; x++) {
                     const $td = makeElement('td');
-                    $table.appendChild($td);
+                    $tr.appendChild($td);
                     // $tr 안에 $td가 20개씩 들어감
                     $td.addEventListener('click', () => {
                         $td.style.backgroundColor = $inputColor.value;
