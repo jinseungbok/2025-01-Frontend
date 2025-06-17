@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table {
-            border-collapse: collapse;
-            margin-top: 5px;
-        }
-
-        td {
-            width: 15px;
-            height: 15px;
-            border: 1px solid gray;
-        }
+        table { border-collapse: collapse; margin-top: 5px; }
+        td { width: 15px; height: 15px; border: 1px solid gray; }
     </style>
 </head>
-
 <body>
     <h1>iconEditor2.html</h1>
     <div id="editor"></div>
     <script>
         function makeElement(name, attributes) {
             const node = document.createElement(name);
-
-            if (attributes) {
-                for (const item in attributes) {
-                    // item에 key값 들어옴
-                    if (attributes.hasOwnProperty(item)) {
+            if( attributes ) {
+                for(const item in attributes) {
+                    if( attributes.hasOwnProperty(item) ) {
                         node.setAttribute(item, attributes[item]);
                     }
                 }
             }
             return node;
         }
-        function createIconEditor(target, nx, ny) {
+
+        function createIconEditor( target, nx, ny ) {
             console.log('createIconEditor 호출!! :', target, nx, ny);
 
-            const $inputColor = makeElement('input', { type: 'color' });
+            const $inputColor = makeElement('input', {type: 'color'});
             target.appendChild($inputColor);
 
             const $inputButtonClear = makeElement('input'
-                , { 'type': 'button', 'value': '전체 삭제' });
+                                    , {'type':'button', 'value': '전체 삭제'});
             $inputButtonClear.addEventListener('click', () => {
-                for (const $tr of $table.children) {
-                    for (const $td of $tr.children) {
-                        $td.style.backgroundColor = null;
+                for(const $tr of $table.children) {
+                    for(const $td of $tr.children) {
+                        $td.style.backgroundColor = '';
                     }
                 }
-            });
-            target.appendChild($inputButtonClear);
+            });   
+            target.appendChild($inputButtonClear);     
 
             const $table = makeElement('table');
             target.appendChild($table);
 
-            for (let y = 0; y < ny; y++) {
+            for(let y=0; y<ny; y++) {
                 const $tr = makeElement('tr');
                 $table.appendChild($tr);
-                for (let x = 0; x < nx; x++) {
+
+                for(let x=0; x<nx; x++) {
                     const $td = makeElement('td');
                     $tr.appendChild($td);
-                    // $tr 안에 $td가 20개씩 들어감
-                    $td.addEventListener('click', () => {
-                        $td.style.backgroundColor = $inputColor.value;
+                    $td.addEventListener('click', () => {                        
+                        $td.style.backgroundColor = !$td.style.backgroundColor ? $inputColor.value : '';
                     });
                 }
+
             }
         }
 
@@ -77,5 +67,4 @@
 
     </script>
 </body>
-
 </html>
