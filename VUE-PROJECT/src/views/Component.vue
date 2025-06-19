@@ -4,20 +4,19 @@ import RearWheel from "@/components/RearWheel.vue";
 </script>
 
 <template>
-  <h1>Hello vue!</h1>
-  <h1>Hello vue!</h1>
-  <FrontWheel></FrontWheel>
-  <RearWheel></RearWheel>
-  
-  <div class="car">
+  <h1>Component vue</h1>
+  <div class="wide">
     <FrontWheel />
+    <FrontWheel />
+  </div>
+  <div class="wide">
+    <RearWheel />
     <RearWheel />
   </div>
 </template>
 
 <style scoped>
-.car {
+.wide {
   display: flex;
-  gap: 10px;
 }
 </style>
