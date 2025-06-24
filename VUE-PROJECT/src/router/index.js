@@ -28,6 +28,18 @@ const router = createRouter({
       path: "/Chapter5",
       component: Chapter5,
     },
+    {
+    path: '/chapter6',      
+    component: () => import('@/views/Chapter6.vue')
+    },
+    {
+    path: '/chapter7',
+    component: () => import('@/views/Chapter7.vue')
+    },
+    {
+    path: '/chapter8',
+    component: () => import('@/views/Chapter8.vue')
+    }
   ],
 });
 
