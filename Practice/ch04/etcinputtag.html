@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>기타 인풋 타입</h1>
+    <form action="#">
+      <div>
+        <label>one-file: <input type="file" /></label>
+      </div>
+      <div>
+        <label>one-file(image): <input type="file" accept="image/*" /></label>
+      </div>
+      <label
+        >multifle-file(excel, image):
+        <input type="file" accept=".xls,.xlsx,image/*" multiple
+      /></label>
+      <div>
+        <label
+          >multifle-file(image): <input type="file" accept="image/*" multiple
+        /></label>
+      </div>
+      <div>
+        <!-- 정규 표현식 [0-9]{2,3}-[0-9]{3,4}-[0-9]{4} -->
+        <label
+          >M:<input
+            type="tell"
+            name="phone"
+            pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
+            required
+        /></label>
+      </div>
+      <div>
+        <!-- email 정규식 -->
+        <!-- '^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$' -->
+        <label
+          >email: <input type="email" name="email"
+          pattern="'^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'"
+        </label>
+      </div>
+      <!-- <div><input type="hidden" name="name" value="홍길동" /></div> -->
+      <!-- hidden 값은 현재는 잘 사용하지 않음 -->
+      <div>
+        <label
+          >email: <input type="email" name="email" value="ddd@ddd.com" readonly
+        /></label>
+      </div>
+      <div>
+        <label
+          >email:
+          <input type="email" name="email2" value="ddd2@ddd.com" disabled
+        /></label>
+      </div>
+      <div><input type="submit" value="전송" /></div>
+    </form>
+  </body>
+</html>

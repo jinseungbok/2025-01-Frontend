@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: gray;
+        height: 400px;
+        display: flex;
+        flex-direction: flex-start;
+        flex-wrap: wrap;
+        /* align-content는 flex-wrap을 주었을 때 적용 가능
+           공백 없이 붙는 성질
+           flex-start, center, flex-end
+           space-between, space-around, space-evenly 사용 가능하다.
+        */
+        align-content: space-between;
+        /*
+        50px의 공간이 생기면 위로 올라옴
+        다 올라왔을 때 stretch 상태
+        */
+      }
+      .container > div {
+        background-color: maroon;
+        color: #fff;
+        padding: 10px;
+        min-width: 48px;
+        min-height: 48px;
+        border: 1px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex-study2.html</h1>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+    <span>안녕하세요.</span>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>formtag.html</h1>
+    <!-- form 태그는 사용자가 작성한 데이터를 백엔드로 보낼 때 사용
+         action : 목적지(URL)
+         method(보내는 방법) : get 방식, post 방식
+
+         get 방식 : 목적지 URL에 데이터를 실어서 보낸다. 표면상 내용이 보임
+                    데이터는 쿼리스트링(Query String, Parameters)으로 표현 
+                    처리 속도가 빠름
+         
+         post 방식 : Request는 헤더, 바디로 이루어져 있는데 body에 데이터를 담아서 보냄
+                    표면상 내용이 보이지 않음
+                    form 태그를 사용해야 함
+                    특히 노출이 되면 안되는 정보를 작성할 때, 큰 파일을 업로드할 때 사용
+
+         쿼리스트링 : url?key1=value1&key2=value2 (빈칸이 들어가지 않음)
+                    물음표 시작, 속성명=속성값으로 구성, 속성끼리 구분은 &로 함
+    -->
+    <form action="./01-result.html" method="get">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="my-name" />
+      <br /><br />
+      <label for="age">나이</label>
+      <input type="number" id="age" name="my-age" />
+      <br /><br />
+      <label>비밀번호: <input type="password" name="pw" /></label>
+      <!-- 로그인시 get 방식이 아니라 post 방식으로 해야 함 -->
+      <input type="submit" value="제출" />
+      <input type="reset" value="초기화" />
+    </form>
+  </body>
+</html>
